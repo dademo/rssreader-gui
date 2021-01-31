@@ -1,0 +1,24 @@
+.fill-empty {
+    flex: 1 1 auto;
+}
+
+mat-drawer-container {
+    height: calc(100% - 64px);
+}
+
+.sidenav-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+mat-icon {
+    vertical-align: bottom;
+}
+
+.app-body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
