@@ -33,6 +33,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatRippleModule } from '@angular/material/core';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -106,5 +107,6 @@ import { MatRippleModule } from '@angular/material/core';
     MatButtonToggleModule,
     MatRippleModule,
   ],
+  declarations: [AboutComponent],
 })
 export class AngularModule { }

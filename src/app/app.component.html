@@ -9,15 +9,17 @@
   <mat-drawer #appDrawer class="sidenav" mode="side" [opened]="true">
     <div class="sidenav-body">
       <mat-nav-list>
-        <a mat-list-item [routerLink]="'/feeds'"><span><mat-icon>rss_feed</mat-icon> Feeds</span></a>
+        <a mat-list-item routerLink="/feeds" routerLinkActive="link-active"><span><mat-icon>rss_feed</mat-icon> Feeds</span></a>
         <mat-divider></mat-divider>
       </mat-nav-list>
       <span class="fill-empty"></span>
       <mat-nav-list>
         <mat-divider></mat-divider>
-        <a mat-list-item [routerLink]="'/about'"><span><mat-icon>info</mat-icon> About</span></a>
+        <a mat-list-item routerLink="/about" routerLinkActive="link-active"><span><mat-icon>info</mat-icon> About</span></a>
+        <!--
         <mat-divider></mat-divider>
         <a mat-list-item [routerLink]="'/settings'"><span><mat-icon>settings</mat-icon> Settings</span></a>
+        -->
       </mat-nav-list>
     </div>
   </mat-drawer>

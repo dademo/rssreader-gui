@@ -5,18 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AngularModule } from './common/angular.module'
+import { AngularModule } from './common/angular.module';
+import { FeedsModule } from './feeds/feeds.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularModule,
+    FlexLayoutModule,
+    FeedsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
