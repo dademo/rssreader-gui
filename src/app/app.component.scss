@@ -1,7 +1,3 @@
-.fill-empty {
-    flex: 1 1 auto;
-}
-
 mat-drawer-container {
     height: calc(100% - 64px);
 }
@@ -19,8 +15,4 @@ mat-icon {
 
 .link-active {
     font-weight: bolder;
-}
-
-.app-body {
-    padding: 10px;
 }

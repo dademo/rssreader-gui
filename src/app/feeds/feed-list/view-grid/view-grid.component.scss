@@ -1,8 +1,18 @@
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+.page-content .card-container {
+    padding: 8px;
 }
 
-.page-content {
-    margin-bottom: 16px;
+.loading-container {
+    padding: 16px 0 32px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+mat-progress-spinner {
+    align-items: center;
+}
+
+mat-paginator {
+    margin: 16px 0;
 }

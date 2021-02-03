@@ -1,6 +1,6 @@
 <div class="page-head">
     <div class="display-type-selector">
-        <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle-group (change)="onDisplayChanged($event)">
             <mat-button-toggle value="table" aria-label="List display">
               <mat-icon>view_list</mat-icon>
             </mat-button-toggle>
@@ -11,10 +11,12 @@
     </div>
 </div>
 
-<ng-template [ngIf]="display == 'table'">
-    <app-view-feeds-table></app-view-feeds-table>
-</ng-template>
+<div class="page-body">
+  <ng-template [ngIf]="display == 'table'">
+      <app-view-feeds-table></app-view-feeds-table>
+  </ng-template>
 
-<ng-template [ngIf]="display == 'grid'">
-    <app-view-feeds-grid></app-view-feeds-grid>
-</ng-template>
+  <ng-template [ngIf]="display == 'grid'">
+      <app-view-feeds-grid></app-view-feeds-grid>
+  </ng-template>
+</div>

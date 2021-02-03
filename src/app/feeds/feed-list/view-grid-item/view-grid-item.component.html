@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{ feed?.title }}</mat-card-title>
+        <mat-card-subtitle>
+            <span>Updated : {{ feed?.updated || feed?.lastUpdate | date:'longDate' }}</span><br/>
+            <!--<span>Published : {{ feed?.published | date:'longDate' }}</span><br/>
+            <span>Copyright : {{ feed?.copyright }}</span>-->
+        </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image *ngIf="feed?.image?.url" [src]="feed?.image?.url"]  [title]="feed?.image?.title"] />
+    <mat-card-content>
+        <p>{{ feed?.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="openLink(feed?.link)">LINK</button>
+    </mat-card-actions>
+</mat-card>

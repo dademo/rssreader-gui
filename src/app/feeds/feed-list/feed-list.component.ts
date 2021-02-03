@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatButtonToggleGroup } from '@angular/material/button-toggle';
-
-enum DisplayType {
-  Table = 'table',
-  Grid = 'grid',
-}
+import { MatButtonToggleChange, MatButtonToggleGroup } from '@angular/material/button-toggle';
+import { DisplayType } from 'src/app/common/data-model/display-type.enum';
+import { FeedsModuleConfig } from '../data-model';
+import { FeedsConfigurationService } from '../services';
 
 @Component({
   selector: 'app-feed-list',
@@ -12,22 +10,32 @@ enum DisplayType {
   styleUrls: ['./feed-list.component.scss']
 })
 export class FeedListComponent implements OnInit {
-
   
   get display(): DisplayType {
     return this.displayTypeGroup?.value;
   }
 
+  private cachedConfig: FeedsModuleConfig;
+
   @ViewChild(MatButtonToggleGroup, { static: true })
   private displayTypeGroup: MatButtonToggleGroup | undefined;
 
-  constructor() { }
+  constructor(
+    private feedsConfigurationService: FeedsConfigurationService) {
+      
+      this.cachedConfig = this.feedsConfigurationService.getConfig();
+    }
 
   ngOnInit(): void {
     // TODO : use stored configuration
     if(this.displayTypeGroup) {
-      this.displayTypeGroup.value = DisplayType.Table;
+      this.displayTypeGroup.value = this.cachedConfig.displayType;
     }
+  }
+
+  onDisplayChanged(event: MatButtonToggleChange): void {
+    this.cachedConfig.displayType = event.value;
+    this.feedsConfigurationService.saveConfig(this.cachedConfig);
   }
 
 }
